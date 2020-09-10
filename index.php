@@ -1,5 +1,5 @@
 <?php include('./include/db.php');
-$query = "SELECT * FROM personal_setup,aboutus_setup,portfolio,resume,skills";
+$query = "SELECT * FROM portfolio";
 $runquery = mysqli_query($db,$query);
 /*check connection related to security ==desbale directory listing and error reporting*/
 if(!$db){
@@ -15,8 +15,9 @@ $data = mysqli_fetch_array($runquery);
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="front/img/Mylogo_white.png" rel="icon">
 
-    <title>khadija zahir</title>
+    <title>Portfolio - khadija zahir</title>
 
 
     <!-- Google Fonts -->
@@ -30,16 +31,19 @@ $data = mysqli_fetch_array($runquery);
     <!-- Main css File -->
 
     <link href="front/css/style.css" rel="stylesheet">
-
-
-    <!-- ======================================================================================== -->
-  <style>
-
-      #hero {   /*for changing bg of home by admin panel*/
-          background: url(front/img/<?=$data['homewallpaper']?>);
-      }
-
-  </style>
+    <style>
+      #hero{
+     background-image: url(front/img/IMG_20200215_192905_9.jpg);
+   }
+   #hero p {
+     margin-bottom: 0px;
+   }
+   .main-menu .profile img {
+     margin: 20px auto;
+     width: 150px;
+     border:none;
+   }
+    </style>
 </head>
 
 <body>
@@ -52,41 +56,15 @@ $data = mysqli_fetch_array($runquery);
 
              <!--bloc profile of menu-->
             <div class="profile">
-                <img src="front/img/<?=$data['profilepic']?>" alt="" class="img-fluid rounded-circle">
-                <h1 class="text-light text-center"><a href="#hero"><?=$data['name']?></a></h1>
+                <img src="front/img/FIRSTLOGO.png" alt="" class="img-fluid rounded-circle">
+                <h1 class="text-light text-center"><a href="#hero">Welcome in my world</a></h1>
                 <div class="social-links mt-4 text-center">
-                    <?php
-        if($data['twitter']!=""){
-            ?>
-                    <a href="<?=$data['twitter']?>"><i class="icofont-twitter"></i></a>
-                    <?php
-        }
-        if($data['facebook']!=""){
-            ?>
-                    <a href="<?=$data['facebook']?>"><i class="icofont-facebook"></i></a>
-                    <?php
-        }
-      if($data['instagram']!=""){
-            ?>
-                    <a href="<?=$data['instagram']?>"><i class="icofont-instagram"></i></a>
-                    <?php
-        }
-       if($data['skype']!=""){
-            ?>
-                    <a href="<?=$data['skype']?>"><i class="icofont-skype"></i></a>
-                    <?php
-        }
-      if($data['linkedin']!=""){
-            ?>
-                    <a href="<?=$data['linkedin']?>"><i class="icofont-linkedin"></i></a>
-                    <?php
-        }
-      if($data['github']!=""){
-            ?>
-                    <a href="<?=$data['github']?>"><i class="icofont-github"></i></a>
-                    <?php
-        }
-        ?>
+                    <a href="https://www.twitter.com/"><i class="icofont-twitter"></i></a>
+                    <a href="https://www.facebook.com/"><i class="icofont-facebook"></i></a>
+                    <a href="https://www.instagram.com/"><i class="icofont-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/khadija-zahir-97524b19a/"><i class="icofont-linkedin"></i></a>
+                    <a href="https://github.com/KhadijaZahir/portfolio"><i class="icofont-github"></i></a>
+
                 </div>
             </div>
 
@@ -99,8 +77,6 @@ $data = mysqli_fetch_array($runquery);
                     <li><a href="#portfolio"><i class="icofont-book"></i> Portfolio</a></li>
                     <li><a href=".\admin\login\index.php"><i class="icofont-key"></i> Login</a></li>
                     <li><a href="#contact"><i class="icofont-envelope"></i> Contact</a></li>
-
-
                 </ul>
             </nav>
             <!-- .nav-menu -->
@@ -112,8 +88,12 @@ $data = mysqli_fetch_array($runquery);
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
         <div class="hero-container">
-            <h1>I'm <?=$data['name']?></h1>
-            <p><span><?=$data['professions']?></span></p>
+            <h1>I'm khadija zahir</h1>
+            <p><span>Web Developer</span></p>
+            <p><span>Graphic designer</span></p>
+            <p><span>Photographer</span></p>
+            <p><span>Videomaker</span></p>
+
         </div>
     </section>
     <!-- ============ End Hero =================-->
@@ -126,28 +106,27 @@ $data = mysqli_fetch_array($runquery);
 
                 <div class="section-title">
                         <h2>About Me</h2>
-                        <p><?=$data['shortdesc']?></p>
+                      <!--  <p>Some info about me </p>-->
                 </div>
 
                 <div class="row">
                         <div class="col-lg-4">
-                            <img src="front/img/<?=$data['profilepic']?>" class="img-fluid" alt="my image">
+                            <img src="front/img/SPAC.jpg" class="img-fluid" alt="my image">
                         </div>
                         <div class="col-lg-8 pt-4 pt-lg-0 content">
-                            <h3><?=$data['heading']?></h3>
+                            <h3>Graphic Designer and Web Developer</h3>
                             <p class="font-italic">
-                                <?=$data['subheading']?>
+                                I m web developer and so fascinated by Graphic Design, Crafting, Photography, Art ...
                             </p>
                             <div>
                                 <ul class="row">
-                                    <li class="col-lg-8"><i class="icofont-rounded-right"></i> <strong>Birthday :</strong> <?=$data['dob']?></li>
-                                    <li class="col-lg-8"><i class="icofont-rounded-right"></i> <strong>Email :</strong> <?=$data['emailid']?></li>
-                                    <li class="col-lg-8"><i class="icofont-rounded-right"></i> <strong>Mobile :</strong> <?=$data['mobile']?></li>
-                                    <li class="col-lg-8"><i class="icofont-rounded-right"></i> <strong>Website :</strong> <?=$data['website']?></li>
-                                    <li class="col-lg-8"><i class="icofont-rounded-right"></i> <strong>Location :</strong> <?=$data['location']?></li>
+                                    <li class="col-lg-8"><i class="icofont-rounded-right"></i> <strong>Birthday :</strong> 03 March, 1993</li>
+                                    <li class="col-lg-8"><i class="icofont-rounded-right"></i> <strong>Email :</strong> zahir.khadija.yc@gmail.com</li>
+                                    <li class="col-lg-8"><i class="icofont-rounded-right"></i> <strong>Mobile :</strong> 0623211001</li>
+                                    <li class="col-lg-8"><i class="icofont-rounded-right"></i> <strong>Location :</strong> Morocco FEZ</li>
                                 </ul>
                             </div>
-                            <p><?=$data['longdesc']?></p>
+                            <p>Student at Youcode school based in Youssofia Morocco</p>
                         </div>
                 </div>
             </div>
@@ -164,21 +143,57 @@ $data = mysqli_fetch_array($runquery);
 
                 <div class="row skills-content">
                           <div class="row col-lg-12">
-                                      <?php
-                                      $query3 = "SELECT * FROM skills";
-                                      $runquery3= mysqli_query($db,$query3);
-                                      while($data3=mysqli_fetch_array($runquery3)){
-                                      ?>
+
                                 <div class="progress col-lg-6">
-                                      <span class="skill"><?=$data3['skill']?> <i class="val"><?=$data3['score']?>%</i></span>
+                                      <span class="skill">HTML/CSS/SASS<i class="val">90%</i></span>
                                       <div class="progress-bar-wrap">
-                                          <!--  <div class="progress-bar" style="width: <?=$data3['score']?>%"></div>-->
-                                      <div class="progress-bar progress-bar-striped" role="progressbar" style="width: <?=$data3['score']?>%" aria-valuenow="<?=$data3['score']?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                      <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                                       </div>
                                 </div>
-                                <?php
-                                 }
-                                ?>
+                                <div class="progress col-lg-6">
+                                      <span class="skill">JS<i class="val">50%</i></span>
+                                      <div class="progress-bar-wrap">
+                                      <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                      </div>
+                                </div>
+                                <div class="progress col-lg-6">
+                                      <span class="skill">bootstrap<i class="val">50%</i></span>
+                                      <div class="progress-bar-wrap">
+                                      <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                      </div>
+                                </div>
+
+                                <div class="progress col-lg-6">
+                                      <span class="skill">WordPress<i class="val">90%</i></span>
+                                      <div class="progress-bar-wrap">
+                                      <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                      </div>
+                              </div>
+
+                                <div class="progress col-lg-6">
+                                      <span class="skill">PHP<i class="val">50%</i></span>
+                                      <div class="progress-bar-wrap">
+                                      <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                      </div>
+                                </div>
+                                <div class="progress col-lg-6">
+                                      <span class="skill">Illustrator<i class="val">50%</i></span>
+                                      <div class="progress-bar-wrap">
+                                      <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                      </div>
+                                </div>
+                                <div class="progress col-lg-6">
+                                      <span class="skill">Premiere Pro<i class="val">50%</i></span>
+                                      <div class="progress-bar-wrap">
+                                      <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                      </div>
+                                </div>
+                                <div class="progress col-lg-6">
+                                      <span class="skill">Photoshop<i class="val">90%</i></span>
+                                      <div class="progress-bar-wrap">
+                                      <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                      </div>
+                                </div>
 
                           </div>
                 </div>
@@ -198,38 +213,44 @@ $data = mysqli_fetch_array($runquery);
                     <div class="row">
                         <div class="col-lg-6">
                                 <h3 class="resume-title">Professional Experience</h3>
-                                <?php
-                                $query4 = "SELECT * FROM resume WHERE category='pe'";
-                                $runquery4= mysqli_query($db,$query4);
-                                while($data4=mysqli_fetch_array($runquery4)){
-                                ?>
+
                               <div class="resume-item">
-                                    <h4><?=$data4['title']?></h4>
-                                    <h5><?=$data4['year']?></h5>
-                                    <p><?=$data4['ogname']?></p>
-                                    <p><?=$data4['workdesc']?></p>
+                                    <h4>TRAINING AS DEVELOPER WORDPRESS</h4>
+                                    <h5>07/2020 - 09/2020</h5>
+                                    <p>ReWeb Agency</p>
+                                    <p>Une agence web à rabat</p>
                               </div>
-                              <?php
-                              }
-                              ?>
+                              <div class="resume-item">
+                                    <h4>TRAINING AS WEB DEVELOPER AND DESIGNER</h4>
+                                    <h5>05/2020 - 08/2020</h5>
+                                    <p>Project KolnaExplorer</p>
+                                    <p>Project of making a website for an association of hiking</p>
+                              </div>
+
                         </div>
 
                         <div class="col-lg-6">
                             <h3 class="resume-title">Education</h3>
-                                  <?php
-                                  $query4 = "SELECT * FROM resume WHERE category='e'";
-                                  $runquery4= mysqli_query($db,$query4);
-                                  while($data4=mysqli_fetch_array($runquery4)){
-                                  ?>
+
                             <div class="resume-item">
-                                <h4><?=$data4['title']?></h4>
-                                <h5><?=$data4['year']?></h5>
-                                <p><em><?=$data4['ogname']?></em></p>
-                                <p><?=$data4['workdesc']?></p>
+                                <h4>WEB DEVELOPER</h4>
+                                <h5>2019 -2021</h5>
+                                <p><em>Youcode</em></p>
+                                <p>school of web developement in Youssofia</p>
                             </div>
-                            <?php
-                              }
-                             ?>
+                            <div class="resume-item">
+                                <h4>MATER'S DEGREE</h4>
+                                <h5>2014-2016</h5>
+                                <p><em>FST -Fez</em></p>
+                                <p>Master in biotechnplogy</p>
+                            </div>
+                            <div class="resume-item">
+                                <h4>BACHELER'S DEGREE</h4>
+                                <h5>2011</h5>
+                                <p><em>FEZ</em></p>
+                            </div>
+
+
                         </div>
                     </div>
             </div>

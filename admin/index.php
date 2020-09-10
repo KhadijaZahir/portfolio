@@ -4,7 +4,7 @@ if(!isset($_SESSION['username'])){
     header('location:login/');
 }
 include('../include/db.php');
-$query="SELECT * FROM personal_setup,aboutus_setup,admin_users";
+$query="SELECT * FROM portfolio,admin_users";
 $queryrun=mysqli_query($db,$query);
 $data=mysqli_fetch_array($queryrun);
 ?>
@@ -47,21 +47,7 @@ $data=mysqli_fetch_array($queryrun);
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-secondary">
           <span>Edit Portfolio</span>
           </h6>
-          <li class="nav-item">
-            <a class="nav-link" href="?edithome=true">
-              Edit Home
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="?editabout=true">
-              Edit About
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="?editresume=true">
-              Edit Resume
-            </a>
-          </li>
+
           <li class="nav-item">
             <a class="nav-link" href="?editportfolio=true">
               Edit Portfolio
@@ -92,13 +78,7 @@ $data=mysqli_fetch_array($queryrun);
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
 <?php
-     if(isset($_GET['edithome'])){
-     include('php/home.php');
-     }else if(isset($_GET['editabout'])){
-         include('php/about.php');
-     }else if(isset($_GET['editresume'])){
-       include('php/resume.php');
-     }else if(isset($_GET['editportfolio'])){
+     if(isset($_GET['editportfolio'])){
       include('php/portfolio.php');
      }else if(isset($_GET['editprofile'])){
       ?>

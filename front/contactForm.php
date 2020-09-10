@@ -80,19 +80,19 @@ if(!preg_match("/^[A-Za-z .'-]+$/", $name)){
                                   <div class="address">
                                       <i class="icofont-google-map"></i>
                                       <h4>Location:</h4>
-                                      <p><?=$data['location']?></p>
+                                      <p>Morocco - Fez</p>
                                   </div>
 
                                   <div class="email">
                                       <i class="icofont-envelope"></i>
                                       <h4>Email:</h4>
-                                      <p><a href="mailto:<?=$data['emailid']?>"><?=$data['emailid']?></a></p>
+                                      <p><a href="mailto:zahir.khadija.yc@gmail">zahir.khadija.yc@gmail</a></p>
                                   </div>
 
                                   <div class="phone">
                                       <i class="icofont-phone"></i>
                                       <h4>Call:</h4>
-                                      <p><?=$data['mobile']?></p>
+                                      <p>0623211001</p>
                                   </div>
                               </div>
 

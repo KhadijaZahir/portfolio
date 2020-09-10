@@ -1,6 +1,6 @@
 <?php
 //mysqli_connect : to connect to mysql databae server
-$db=mysqli_connect("localhost","root","","portfolioZK2");
+$db=mysqli_connect("localhost","root","","portfolio_kz");
 //if($db){
 //    echo "databse is connected !";
 //}else{
