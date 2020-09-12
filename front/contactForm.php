@@ -80,7 +80,7 @@ if(!preg_match("/^[A-Za-z .'-]+$/", $name)){
                                   <div class="address">
                                       <i class="icofont-google-map"></i>
                                       <h4>Location:</h4>
-                                      <p>Morocco - Fez</p>
+                                      <p>Morocco</p>
                                   </div>
 
                                   <div class="email">
@@ -92,7 +92,7 @@ if(!preg_match("/^[A-Za-z .'-]+$/", $name)){
                                   <div class="phone">
                                       <i class="icofont-phone"></i>
                                       <h4>Call:</h4>
-                                      <p>0623211001</p>
+                                      <p>06000000000</p>
                                   </div>
                               </div>
 

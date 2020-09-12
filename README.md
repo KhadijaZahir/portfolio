@@ -2,5 +2,3 @@
  
 
 admin panel:
-password:khadijaAdmin
-username: khadija@Admin

@@ -111,10 +111,10 @@ $data = mysqli_fetch_array($runquery);
                             </p>
                             <div>
                                 <ul class="row">
-                                    <li class="col-lg-8"><i class="icofont-rounded-right"></i> <strong>Birthday :</strong> 03 March, 1993</li>
+                                    <li class="col-lg-8"><i class="icofont-rounded-right"></i> <strong>Birthday :</strong> 14 July</li>
                                     <li class="col-lg-8"><i class="icofont-rounded-right"></i> <strong>Email :</strong> zahir.khadija.yc@gmail.com</li>
-                                    <li class="col-lg-8"><i class="icofont-rounded-right"></i> <strong>Mobile :</strong> 0623211001</li>
-                                    <li class="col-lg-8"><i class="icofont-rounded-right"></i> <strong>Location :</strong> Morocco FEZ</li>
+                                    <li class="col-lg-8"><i class="icofont-rounded-right"></i> <strong>Mobile :</strong> 0600000000</li>
+                                    <li class="col-lg-8"><i class="icofont-rounded-right"></i> <strong>Location :</strong> Morocco</li>
                                 </ul>
                             </div>
                             <p>Student at Youcode school based in Youssofia Morocco</p>
@@ -231,14 +231,14 @@ $data = mysqli_fetch_array($runquery);
                             </div>
                             <div class="resume-item">
                                 <h4>MATER'S DEGREE</h4>
-                                <h5>2014-2016</h5>
-                                <p><em>FST -Fez</em></p>
+                                <h5>2014</h5>
+                                <p><em>FST</em></p>
                                 <p>Master in biotechnplogy</p>
                             </div>
                             <div class="resume-item">
                                 <h4>BACHELER'S DEGREE</h4>
-                                <h5>2011</h5>
-                                <p><em>FEZ</em></p>
+                                <h5>2013</h5>
+                                <p><em>Morocco</em></p>
                             </div>
                         </div>
                     </div>
@@ -246,9 +246,10 @@ $data = mysqli_fetch_array($runquery);
         </section>
 
         <!-- ====== End Resume Section ====== -->
+
+
         <!-- ======= Portfolio Section ======= -->
 
-        <!--start Portfolio works-->
              <section class="portfolio section-bg" id="Portfolio">
                  <div class="container">
                     <div class="row">
@@ -279,7 +280,6 @@ $data = mysqli_fetch_array($runquery);
                  </div>
               </div>
         </section>
-        <!--end copyright-->
              <!--start lightbox for gallery popup when clicked to plus icon to see img big-->
 
               <div class="lightbox hide">
@@ -290,40 +290,7 @@ $data = mysqli_fetch_array($runquery);
              <!--end lightbox-->
 
         <!-- ======= Portfolio Section ======= -->
-        <!--
-                <section id="portfolio" class="portfolio section-bg">
-                    <div class="container">
 
-                        <div class="section-title">
-                            <h2>Portfolio</h2>
-                        </div>
-
-                        <div class="row portfolio-container">
-                                   <?php
-                                    $query5 = "SELECT * FROM portfolio";
-                                    $runquery5= mysqli_query($db,$query5);
-                                    while($data5=mysqli_fetch_array($runquery5)){
-                                   ?>
-                                   <div class="col-lg-4 col-md-6 portfolio-item">
-                                         <div class="portfolio-wrap">
-                                               <img src="front/img/<?=$data5['projectpic']?>" class="img-fluid" alt="">
-                                               <div class="portfolio-links" title="<?=$data5['projectname']?>">
-                                                   <div class="overlay">
-                                                       <h4><a href="<?=$data5['projectlink']?>" target="_blank"><?=$data5['projectname']?></a></h4>
-                                                   </div>
-                                               </div>
-                                         </div>
-                                     </div>
-                                  <?php
-                                  }
-                                ?>
-                        </div>
-                    </div>
-                </section>
-
-        -->
-
-        <!-- ====== End Portfolio Section ====== -->
 
 
         <!-- ======= Contact Section ======= -->
