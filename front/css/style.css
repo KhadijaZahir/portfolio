@@ -1,3 +1,122 @@
+
+.portfolio .portfolio-item{
+  padding: 8px;
+}
+
+.portfolio .portfolio-item .inner{
+   position: relative;
+}
+.portfolio .portfolio-item img{
+  height: 270px;
+  width: 100%;
+  display: block;
+}
+.portfolio .portfolio-item .overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+.portfolio .portfolio-item:hover .overlay{
+  opacity: 1;
+}
+.portfolio .portfolio-item .overlay .icofont{
+  background-color: #0000FF;
+  height: 50px;
+  color: #fff;
+  width:50px;
+  display: inline-block;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.portfolio .portfolio-item .overlay h4{
+   color: #fff;
+   margin-top: 15px;
+   font-size: 25px;
+   font-weight: 600;
+}
+
+.portfolio .portfolio-item .overlay h4 a{
+  color: #fff;
+}
+
+/*lightbox*/
+
+.lightbox{
+  position: fixed;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+@media(max-width: 1030px){
+  .lightbox{
+  left:200px;
+
+}
+}
+@media(max-width: 767px){
+  .lightbox{position: fixed;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  z-index: 100;
+}
+}
+
+.lightbox.show{
+   display: flex;
+}
+.lightbox.hide{
+   display: none;
+}
+.lightbox .close-lightbox{
+   height: 35px;
+   width: 35px;
+    color: #FFF;
+    background-color: #007bff;
+    text-align: center;
+    line-height:35px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 101;
+}
+.lightbox .close-lightbox:hover{
+    color: #007bff;
+    background-color: #fff;
+}
+@media(max-width: 767px){
+  .lightbox .close-lightbox{
+  right: 78px;
+  top: 22px;
+}
+}
+
+.lightbox img{
+  max-width: 90%;
+  max-height: 80%;
+  display: block;
+  z-index: 99999;
+}
 /*--------------------------------------------------------------
 # body
 --------------------------------------------------------------*/
@@ -65,7 +184,7 @@ section {
   border-radius: 50px;
   right: 15px;
   bottom: 15px;
-  background: #007bff;
+  background: #000;
   color: #fff;
   z-index: 99999;
 }
@@ -78,8 +197,8 @@ section {
 }
 
 .back-to-top:hover {
-  color: #fff;
-  background: #2eafec;
+  color: #000;
+  background: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -90,7 +209,7 @@ section {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: 200px;/*300*/
   z-index: 9997;
   padding: 0 15px;
   background: #040b14;
@@ -102,40 +221,6 @@ section {
   width: 150px;
   /*border: 8px solid #2c2f3f;*/
 }
-
-.main-menu .profile h1 {
-  font-size: 24px;
-  margin: 0;
-  padding: 0;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-}
-
-.main-menu .profile h1 a{
-  color: #fff;
-  text-decoration: none;
-}
-
-.main-menu .profile .social-links a {
-  font-size: 18px;
-  display: inline-block;
-  background: #212431;
-  color: #fff;
-  line-height: 1;
-  padding: 8px 0;
-  margin-right: 4px;
-  border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-}
-
-.main-menu .profile .social-links a:hover {
-  background: #007bff;
-  color: #fff;
-  text-decoration: none;
-}
-
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -196,7 +281,7 @@ section {
 
   .main-menu{
     position: fixed;
-    width: 40%;
+    width: 200px; /*40%;*/
     left: 0px;
     top: 0px;
     display: none;
@@ -213,7 +298,7 @@ section {
 div main
 ----------------------------------------------------------------*/
 #main {
-  margin-left: 300px;
+  margin-left: 200px;/*300*/
 }
 
 @media (max-width: 1199px) {
@@ -221,7 +306,7 @@ div main
     left: 0px;
   }
   #main {
-    margin-left: 300px;
+    margin-left: 200px;/*300*/
   }
 }
 @media(max-width: 767px){
@@ -377,7 +462,7 @@ div main
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
-
+/*
 .portfolio .portfolio-item {
   margin-bottom: 30px;
 }
@@ -390,9 +475,9 @@ div main
 }
 
 
-
+*/
 /*overlay*/
-
+/*
 .portfolio .portfolio-wrap .portfolio-links{
   position: relative;
 }
@@ -421,7 +506,7 @@ div main
    font-size: 25px;
    font-weight: 700;
 }
-
+*/
 /*end overlay*/
 
 
@@ -489,16 +574,37 @@ div main
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  padding: 15px;
+  padding: 20px;
   width: auto;
-  background: #040b14;
+  background: #007bff;
+  /*background : #0099FF;*/
   text-align: center;
   color: #FFF;
   font-size: 16px;
   position: relative;
-  z-index: 9999;
+  z-index: 11;
 }
 
 #footer a{
-  color: #007bff;
+  color: #000;
+  font-weight: bolder;
+}
+#footer .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+}
+
+#footer .social-links a:hover {
+  background: #007bff;
+  color: #fff;
+  text-decoration: none;
 }

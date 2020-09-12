@@ -22,15 +22,16 @@ $data=mysqli_fetch_array($queryrun);
     <!-- file css-->
     <link href="css/dashboard.css" rel="stylesheet">
     <!--ico font-->
-    <link href="front/icofont/icofont.min.css" rel="stylesheet">
+    <link href="icofont/icofont.min.css" rel="stylesheet">
 
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-primary sticky-top flex-md-nowrap p-0">
+    <!-- ======= Mobile nav toggle button ======= -->
+    <div class="hamburger"><i class="icofont-navigation-menu"></i></div>
+
+    <nav class="navbar navbar-dark bg-dark sticky-top flex-md-nowrap p-0">
           <!--$_session :set a session: way to store info in var to be used across multiple pages-->
           <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Hey, <?=$_SESSION['username']?></a>
-          <!-- ======= Mobile nav toggle button ======= -->
-          <div class="hamburger"><i class="icofont-navigation-menu"></i></div>
 
           <ul class=" px-3">
             <li class="nav-item text-nowrap list-unstyled mr-0">
@@ -41,34 +42,34 @@ $data=mysqli_fetch_array($queryrun);
 
 <div class="container-fluid">
   <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-primary sidebar">
       <div class="sidebar-sticky pt-3">
         <ul class="nav flex-column">
-          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-secondary">
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-dark">
           <span>Edit Portfolio</span>
           </h6>
 
           <li class="nav-item">
-            <a class="nav-link" href="?editportfolio=true">
+            <a class="nav-link text-light" href="?editportfolio=true">
               Edit Portfolio
             </a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="../admin/">
+              <a class="nav-link text-light" href="../admin/">
               Contact me
               </a>
           </li>
 
         </ul>
 
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-secondary">
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-dark">
           <span>Account Settings</span>
-          <a class="d-flex align-items-center text-secondary">
+          <a class="d-flex align-items-center text-dark">
           </a>
         </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <a class="nav-link" href="?editprofile=true">
+            <a class="nav-link text-light" href="?editprofile=true">
               Edit Profile
             </a>
           </li>
@@ -107,7 +108,7 @@ $data=mysqli_fetch_array($queryrun);
                         </div>
                         <div class="form-group col-md-12">
                             <label for="psubtitle">Email Id</label>
-                            <input type="text" name="userid" value="<?=$data['user_id']?>" class="form-control" id="psubtitle" placeholder="email">
+                            <input type="text" name="userid" value="<?=$data['user_email']?>" class="form-control" id="psubtitle" placeholder="email">
                         </div>
                      </div>
                      <input type="submit" name="uprofile" class="btn btn-primary" value="Save Changes">
@@ -122,4 +123,6 @@ $data=mysqli_fetch_array($queryrun);
 
       <script src="./bootstrap/js/bootstrap.bundle.js"></script>
       <script src="./js/dashboard.js"></script>
+      <script src="front/js/toggle.js"></script>
+
 </html>

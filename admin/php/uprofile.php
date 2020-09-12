@@ -14,7 +14,7 @@ if(isset($_POST['uprofile'])){
       $query.="user_pass='$password',";
       //WHERE 1 mean true or always true, used when biuld a client side query by
        //concatenating filtring condition
-      $query.="user_id='$email' WHERE 1";
+      $query.="user_email='$email' WHERE 1";
       echo $query;
       $queryrun=mysqli_query($db,$query);
       if($queryrun){

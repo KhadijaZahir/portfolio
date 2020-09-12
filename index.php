@@ -57,15 +57,6 @@ $data = mysqli_fetch_array($runquery);
              <!--bloc profile of menu-->
             <div class="profile">
                 <img src="front/img/FIRSTLOGO.png" alt="" class="img-fluid rounded-circle">
-                <h1 class="text-light text-center"><a href="#hero">Welcome in my world</a></h1>
-                <div class="social-links mt-4 text-center">
-                    <a href="https://www.twitter.com/"><i class="icofont-twitter"></i></a>
-                    <a href="https://www.facebook.com/"><i class="icofont-facebook"></i></a>
-                    <a href="https://www.instagram.com/"><i class="icofont-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/khadija-zahir-97524b19a/"><i class="icofont-linkedin"></i></a>
-                    <a href="https://github.com/KhadijaZahir/portfolio"><i class="icofont-github"></i></a>
-
-                </div>
             </div>
 
             <!--bloc nav menu-->
@@ -74,7 +65,7 @@ $data = mysqli_fetch_array($runquery);
                      <li><a href="#hero"><i class="icofont-home"></i>Home</a></li>
                     <li><a href="#about"><i class="icofont-user"></i>About</a></li>
                     <li><a href="#resume"><i class="icofont-folder"></i>Resume</a></li>
-                    <li><a href="#portfolio"><i class="icofont-book"></i> Portfolio</a></li>
+                    <li><a href="#Portfolio"><i class="icofont-book"></i> Portfolio</a></li>
                     <li><a href=".\admin\login\index.php"><i class="icofont-key"></i> Login</a></li>
                     <li><a href="#contact"><i class="icofont-envelope"></i> Contact</a></li>
                 </ul>
@@ -249,17 +240,57 @@ $data = mysqli_fetch_array($runquery);
                                 <h5>2011</h5>
                                 <p><em>FEZ</em></p>
                             </div>
-
-
                         </div>
                     </div>
             </div>
         </section>
 
         <!-- ====== End Resume Section ====== -->
-
         <!-- ======= Portfolio Section ======= -->
 
+        <!--start Portfolio works-->
+             <section class="portfolio section-bg" id="Portfolio">
+                 <div class="container">
+                    <div class="row">
+                         <div class="section-title">
+                             <h2>My Portfolio</h2>
+                         </div>
+                    </div>
+
+                    <div class="row portfolio-container">
+                      <?php
+                       $query5 = "SELECT * FROM portfolio";
+                       $runquery5= mysqli_query($db,$query5);
+                       while($data5=mysqli_fetch_array($runquery5)){
+                      ?>
+
+                              <div class="col-lg-4 col-md-6 portfolio-item">
+                                <div class="inner">
+                                    <img src="front/img/<?=$data5['projectpic']?>" alt="">
+                                    <div class="overlay">
+                                       <span class="icofont icofont-plus"></span>
+                                      <h4><a href="<?=$data5['projectlink']?>" target="_blank"><?=$data5['projectname']?></a></h4>
+                                    </div>
+                               </div>
+                              </div>
+                       <?php
+                       }
+                     ?>
+                 </div>
+              </div>
+        </section>
+        <!--end copyright-->
+             <!--start lightbox for gallery popup when clicked to plus icon to see img big-->
+
+              <div class="lightbox hide">
+                   <span class="close-lightbox icofont icofont-close"></span>
+                   <img src="front/img/<?=$data5['projectpic']?>" alt="portfolio">
+              </div>
+
+             <!--end lightbox-->
+
+        <!-- ======= Portfolio Section ======= -->
+        <!--
                 <section id="portfolio" class="portfolio section-bg">
                     <div class="container">
 
@@ -290,6 +321,7 @@ $data = mysqli_fetch_array($runquery);
                     </div>
                 </section>
 
+        -->
 
         <!-- ====== End Portfolio Section ====== -->
 
@@ -301,19 +333,30 @@ $data = mysqli_fetch_array($runquery);
 
         <!-- ===== End Contact Section ====== -->
 
-      </main><!-- End #main -->
 
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
                 Developed by <a href="#about">Khadija zahir</a>
+                <div class="social-links mt-4 text-center">
+                    <a href="https://www.twitter.com/"><i class="icofont-twitter"></i></a>
+                    <a href="https://www.facebook.com/"><i class="icofont-facebook"></i></a>
+                    <a href="https://www.instagram.com/"><i class="icofont-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/khadija-zahir-97524b19a/"><i class="icofont-linkedin"></i></a>
+                    <a href="https://github.com/KhadijaZahir/portfolio"><i class="icofont-github"></i></a>
+
+                </div>
     </footer>
 
     <!-- ===== End  Footer ===== -->
     <!-- Back to top button -->
     <a href="#hero" class="back-to-top"><i class="icofont-simple-up"></i></a>
+  </main><!-- End #main -->
+
 
     <script src="front/js/toggle.js"></script>
+    <script src="front/js/script.js"></script>
+
 
 
 </body>

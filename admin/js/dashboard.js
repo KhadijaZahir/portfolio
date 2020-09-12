@@ -1,5 +1,5 @@
-$('#modal<?=$data2['id']?>').on('shown.bs.modal',func(){
- $('#myInput').trigger('focus')
-})
-
-$('#modal<?=$data2['id']?>').modal(options)
+//Toggle
+const hamBurger=document.querySelector(".hamburger");
+ hamBurger.addEventListener("click",function(){
+   document.querySelector("#sidebarMenu").classList.toggle("show");
+ })
