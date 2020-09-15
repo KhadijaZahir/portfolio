@@ -11,7 +11,7 @@ if(isset($_SESSION['username'])){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
 
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap and CSS -->
 <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="../css/signin.css" rel="stylesheet">
 
@@ -19,7 +19,7 @@ if(isset($_SESSION['username'])){
   <body class="text-center">
           <form class="form-signin" action="../php/check.php" method="post">
           <?php
-//display message og logout and incorrect password and username
+//display message of logout and incorrect password and username
     if(isset($_GET['msg'])){
 
               if($_GET['msg']=='logout'){
@@ -38,7 +38,7 @@ if(isset($_SESSION['username'])){
               }
   }
             ?>
-        <h1 class="h3 mb-3 font-weight-normal">Sign in</h1>
+        <h1 class="h3 mb-3">Sign in</h1>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>

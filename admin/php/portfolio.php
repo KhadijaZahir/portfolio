@@ -67,13 +67,11 @@
         ?>
     <tr>
 <!-- edit-->
-
-      <form class ="form-horizontal" id="modal" action="php/uportfolio.php" method ="POST" enctype="multipart/form-data">
-        <input type="hidden" name="id" value="<?=$data2['id']?>">
-        <fieldset>
-          <legend>UPDATE POST</legend>
+      <form class ="form-horizontal" action="php/uportfolio.php" method ="POST" enctype="multipart/form-data"><!--id="modal-->
+        <input type="hidden" name="id" value="<?=$data2['portfolio_id']?>">
+        <fieldset id="#modal"><!--id="#modal<?=$data2['portfolio_id']?>" -->
+          <h2>UPDATE POST</h2>
     <div class="form-row">
-
           <div class="form-group col-md-12">
               <img src="../front/img/<?=$data2['projectpic']?>" class="sizeImg img-thumbnail">
           </div>
@@ -97,7 +95,6 @@
            </div>
     </div>
 
-          ///////////
           <div class="row">
                <div class="col-md-6">
                    <div class="form-group">
@@ -114,6 +111,7 @@
       </form>
 
       <!-- edit-->
+      <!-- edit-->
 
 
 
@@ -125,13 +123,17 @@
                          <td><?=$data2['projectname']?></td>
                         <!-- row four-->
                         <td>
-                        <a href="<?=$data2['projectlink']?>"> <button type="button" class="btn btn-success btn-sm">
+                <a href="<?=$data2['projectlink']?>"> <button type="button" class="btn btn-success btn-sm">
                  Visit</button></a>
+                 <button type="button" class="edit btn btn-primary btn-sm">
+                  Edit</button>
 
-                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal<?=$data2['id']?>">
-                 Edit</button>
+                <!--
+                <a href="#modal<?=$data2['portfolio_id']?>"><button type="button" class="edit btn btn-primary btn-sm">
+                 Edit</button></a>
 
-                         <a href="php/uportfolio.php?del=<?=$data2['id']?>"><button type="button" class="btn btn-danger btn-sm">
+-->
+                         <a href="php/uportfolio.php?del=<?=$data2['portfolio_id']?>"><button type="button" class="btn btn-danger btn-sm">
                  Delete </button></a>
                        </td>
            </tr>

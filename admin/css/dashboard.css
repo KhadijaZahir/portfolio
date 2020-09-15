@@ -7,7 +7,6 @@
 
 .nav-link{
   font-size: 16px;
-  color: #000;
   font-weight: bold;
 }
 
@@ -18,8 +17,8 @@
     width: 50px;
     height: 40px;
     position: absolute;
-    right: 0;
-    top: 10px;
+    right: 20px;
+    top: 20px;
     color: #FFF;
     border-radius: 3px;
     text-align: center;
@@ -43,16 +42,38 @@
 height: auto;
     left: 0;
     bottom: 0;
-      top: 95px;
+      top: 80px;
     display: none;
   }
   #sidebarMenu.show{
     display: block;
-z-index: 9999;
+   z-index: 9999;
   }
   .hamburger i{
     position: fixed;
     display: inline-block;
   }
 }
-/*--------*/
+
+/*--edit crud portfolio--*/
+/*
+fieldset{
+display: none;
+}
+fieldset#modal{
+  display: none!important;
+}
+fieldset#modal.show{
+      position: fixed;
+      border:2px solid black;
+      padding: 40px;
+      background-color: #fff;
+      top: 7%;
+      left: 20%;
+      z-index: 1050;
+      display: block!important;
+      max-width: 50%;
+      max-height: 90%;
+
+}
+*/

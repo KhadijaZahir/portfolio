@@ -15,7 +15,7 @@ if(isset($_POST['login'])){
     //$result: result returned by mysqli_query
     $result = mysqli_fetch_array($run);
     if($result){
-        $_SESSION['id']=$result['id'];
+        $_SESSION['admin_id']=$result['admin_id'];/*13/09/20 $_SESSION['id']=$result['id'];*/
         $_SESSION['username']=$result['username'];
         header('location:../');
     }else{

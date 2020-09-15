@@ -2,8 +2,8 @@
 include('../../include/db.php');
 include('checkupload.php');
 //collect value of field id
-$id=$_POST['id'];
-$query="SELECT * FROM portfolio WHERE id='$id'";
+$id=$_POST['portfolio_id'];/* 13/9/20 $id=$_POST['id'];*/
+$query="SELECT * FROM portfolio WHERE portfolio_id='$id'";/* 13/9/20 $query="SELECT * FROM portfolio WHERE id='$id'";*/
 
 $queryrun=mysqli_query($db,$query);
 $data=mysqli_fetch_array($queryrun);
@@ -34,7 +34,7 @@ $target_dir = "../../front/img/";
               $query="UPDATE portfolio SET ";
               $query.="projectpic='$projectpic',";
               $query.="projectname='$projectname',";
-              $query.="projectlink='$projectlink' WHERE id='$id'";
+              $query.="projectlink='$projectlink' WHERE portfolio_id='$id'";/* 13/9/20 $query.="projectlink='$projectlink' WHERE id='$id'";*/
               echo $query;
               $queryrun=mysqli_query($db,$query);
               if($queryrun){
@@ -49,7 +49,7 @@ $target_dir = "../../front/img/";
 if(isset($_GET['del'])){
     $id=$_GET['del'];
     //where :which row to remove data
-    $query="DELETE FROM portfolio WHERE id='$id'";
+    $query="DELETE FROM portfolio WHERE portfolio_id='$id'"; /* 13/9/20 $query="DELETE FROM portfolio WHERE id='$id'";*/
     $queryrun=mysqli_query($db,$query);
 if($queryrun){
     header("location:../?editportfolio=true#done");

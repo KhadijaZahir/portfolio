@@ -7,14 +7,12 @@ if(isset($_POST['submit'])){
   // $subject = htmlspecialchars(strtolower(trim($_POST['subject'])));
   // $message = htmlspecialchars(strtolower(trim($_POST['message'])));
   // Assign variacbles =====>   $name = $_POST['name'];
-  $name = filter_var($_POST['name'],FILTER_SANITIZE_STRING);//Get name Value
+  $name = filter_var($_POST['name'],FILTER_SANITIZE_STRING);//Get (input)name Value
   $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
   $subject = filter_var($_POST['subject'],FILTER_SANITIZE_STRING);
   $message = filter_var($_POST['message'],FILTER_SANITIZE_STRING);
 
-
-//create array for errors
-
+//create msg for errors
 if(!preg_match("/^[A-Za-z .'-]+$/", $name)){
     $name_error = 'Invalid full name';
   }
@@ -32,43 +30,24 @@ if(!preg_match("/^[A-Za-z .'-]+$/", $name)){
     $name_error = 'name must be larger than 3 characters';
   }
 
-
   if(!isset($name_error) && !isset($subject_error) && !isset($email_error) && !isset($message_error)){
       // Message if mail has been sent
-      // echo $send ='votre message à été envoyé, je vous répondrais dans meilleur délais, merci.';
-      echo"<script>alert('votre message à été envoyé, je vous répondrais dans meilleur délais, merci.')</script>";
-      //header("location: ./admin/php/contact.php");
-      //end();
-      /////////////////////////////////
+      echo"<script>alert('Your message has been sent. Thank you!')</script>";
       $query="INSERT INTO contact(cname,cemail,csubject,cmessage) ";
       $query.="VALUES('$name','$email','$subject','$message')";
       mysqli_query($db,$query);
-      // $run = mysqli_query($db,$query);
-    // if($run){
-    //     echo 'Your message has been sent. Thank you!';
-    // }
-      //$error[]= 'votre message à été envoyé';
-
-  }
+    }
 
   else{
       // Message if mail has been not sent
-     //echo $notsent='votre message n\'a pas été envoyé veuillez réessayer!';
-    echo"<script>alert('votre message n\'a pas été envoyé veuillez réessayer!')</script>";
-      //$error[]= "votre message n\'a pas été envoyé veuillez réessayer!";
+    echo"<script>alert('Your message has been not sent!. Try again please')</script>";
   }
-
-
-
-///////////////
-
 }
 
 ?>
 
 <section id="contact" class="contact">
             <div class="container">
-
                       <div class="section-title">
                           <h2>Contact</h2>
                       </div>
@@ -86,16 +65,16 @@ if(!preg_match("/^[A-Za-z .'-]+$/", $name)){
                                   <div class="email">
                                       <i class="icofont-envelope"></i>
                                       <h4>Email:</h4>
-                                      <p><a href="mailto:zahir.khadija.yc@gmail">zahir.khadija.yc@gmail</a></p>
+                                      <p><a href="mailto:zahir.khadija.yc@gmail">
+                                               zahir.khadija.yc@gmail</a></p>
                                   </div>
 
                                   <div class="phone">
                                       <i class="icofont-phone"></i>
                                       <h4>Call:</h4>
-                                      <p>06000000000</p>
+                                      <p>0600000000</p>
                                   </div>
                               </div>
-
                           </div>
 
                     <!--bloc two of contact-->
