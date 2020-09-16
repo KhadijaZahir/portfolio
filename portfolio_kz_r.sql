@@ -32,8 +32,8 @@ DROP TABLE IF EXISTS `admin_users`;
 CREATE TABLE IF NOT EXISTS `admin_users` (
   `admin_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(250) NOT NULL,
-  `user_email` varchar(250) NOT NULL,
-  `user_pass` varchar(250) NOT NULL,
+  `admin_email` varchar(250) NOT NULL,
+  `admin_pass` varchar(250) NOT NULL,
   PRIMARY KEY (`admin_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `admin_users` (
 -- Dumping data for table `admin_users`
 --
 
-INSERT INTO `admin_users` (`admin_id`, `username`, `user_email`, `user_pass`) VALUES
+INSERT INTO `admin_users` (`admin_id`, `username`, `admin_email`, `admin_pass`) VALUES
 (1, 'khadija za', 'khadijaAdmin', 'khadija@Admin');
 
 -- --------------------------------------------------------
@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `portfolio` (
   `admin_id` int(11) NOT NULL,
   PRIMARY KEY (`portfolio_id`),
   FOREIGN KEY (`admin_id`) REFERENCES `admin_users`(`admin_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

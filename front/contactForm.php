@@ -6,13 +6,13 @@ if(isset($_POST['submit'])){
   // $email = htmlspecialchars(strtolower(trim($_POST['email'])));
   // $subject = htmlspecialchars(strtolower(trim($_POST['subject'])));
   // $message = htmlspecialchars(strtolower(trim($_POST['message'])));
-  // Assign variacbles =====>   $name = $_POST['name'];
+  // Assign variables
   $name = filter_var($_POST['name'],FILTER_SANITIZE_STRING);//Get (input)name Value
   $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
   $subject = filter_var($_POST['subject'],FILTER_SANITIZE_STRING);
   $message = filter_var($_POST['message'],FILTER_SANITIZE_STRING);
 
-//create msg for errors
+//other filters
 if(!preg_match("/^[A-Za-z .'-]+$/", $name)){
     $name_error = 'Invalid full name';
   }
@@ -25,7 +25,6 @@ if(!preg_match("/^[A-Za-z .'-]+$/", $name)){
   if(strlen($message)<=10){
     $message_error= 'message can`\'t be less than 10 characters';
   }
-//other error
   if(strlen($name)<3){
     $name_error = 'name must be larger than 3 characters';
   }

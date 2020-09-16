@@ -1,9 +1,8 @@
 <h2>Edit Portfolio Section</h2>
-        <?php
-        //$_GET used to collect val from html form using method get
-        if(isset($_GET['msg'])){
+<?php
+if(isset($_GET['msg'])){
 
-        if($_GET['msg']=='updated'){
+    if($_GET['msg']=='updated'){
      ?>
      <div class="alert alert-success text-center" role="alert">
      Project Successfully Added !
@@ -19,7 +18,6 @@
  }
 }
 ?>
-<!--enctype="multipart/form-data specify which content type to use when submitting the form-->
 <form method="post" action="php/uportfolio.php" enctype="multipart/form-data">
  <div class="form-row">
          <div class="form-group col-md-6">
@@ -29,12 +27,10 @@
                <label class="custom-file-label" for="projectpic">Choose Pic...</label>
              </div>
         </div>
-
         <div class="form-group col-md-6 mt-auto">
            <label for="name">Project Name</label>
            <input type="name" name="projectname" class="form-control" id="name" placeholder="Project Name">
          </div>
-
          <div class="form-group col-md-12">
            <label for="email">Project Link</label>
            <input type="text" name="projectlink" class="form-control" id="email" placeholder="Project Link">
@@ -111,10 +107,6 @@
       </form>
 
       <!-- edit-->
-      <!-- edit-->
-
-
-
                          <!-- row one-->
                          <td>#<?=$count?></td>
                          <!-- row two-->
@@ -134,7 +126,7 @@
 
 -->
                          <a href="php/uportfolio.php?del=<?=$data2['portfolio_id']?>"><button type="button" class="btn btn-danger btn-sm">
-                 Delete </button></a>
+                        Delete </button></a>
                        </td>
            </tr>
         <?php

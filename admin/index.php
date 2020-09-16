@@ -89,11 +89,11 @@ $data=mysqli_fetch_array($queryrun);
                         </div>
                         <div class="form-group col-md-6">
                             <label for="psubtitle">Password</label>
-                            <input type="text" name="userpass" value="<?=$data['user_pass']?>" class="form-control" id="psubtitle" placeholder="Password">
+                            <input type="text" name="userpass" value="<?=$data['admin_pass']?>" class="form-control" id="psubtitle" placeholder="Password">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="psubtitle">Email Id</label>
-                            <input type="text" name="userid" value="<?=$data['user_email']?>" class="form-control" id="psubtitle" placeholder="email">
+                            <input type="text" name="userid" value="<?=$data['admin_email']?>" class="form-control" id="psubtitle" placeholder="email">
                         </div>
                      </div>
                      <input type="submit" name="uprofile" class="btn btn-primary" value="Save Changes">

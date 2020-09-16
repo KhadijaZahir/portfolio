@@ -1,4 +1,4 @@
-   <h2>User Messages</h2>
+   <h2>Users Messages</h2>
       <div class="table-responsive">
         <table class="table table-hover table-sm">
           <thead>
@@ -13,7 +13,7 @@
           <tbody>
 
              <?php
-    $query="SELECT * FROM contact";
+      $query="SELECT * FROM contact";
       $queryrun=mysqli_query($db,$query);
       $count=0;
       //output data
@@ -30,7 +30,7 @@
               $count++;
       }
       if($count==0){ ?>
-          <td colspan="5" align="center"> Currenty There Is No Messages or Queries !</td>
+          <td colspan="5" align="center"> There Is No Messages !</td>
       <?php }
         ?>
 

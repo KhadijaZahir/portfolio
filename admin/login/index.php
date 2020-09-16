@@ -19,7 +19,7 @@ if(isset($_SESSION['username'])){
   <body class="text-center">
           <form class="form-signin" action="../php/check.php" method="post">
           <?php
-//display message of logout and incorrect password and username
+    //display message of logout and incorrect password and username
     if(isset($_GET['msg'])){
 
               if($_GET['msg']=='logout'){
